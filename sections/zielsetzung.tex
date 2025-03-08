@@ -8,6 +8,10 @@
 
 \textit{Welche wichtigen Aspekte eines Schutzobjektes sind für die Compliance zu berücksichtigen?}
 
+// Frage aus meeting mit Graf am 05.03. ZU löschen? \textit{Welche wichtigen Aspekte sind für die Compliance auf der SGC zu berücksichtigen?
+Wie können diese Aspekte auf die verschiedenen Plattformen angewendet werden? Wie werden diese Aspekte heute innerhalb des BITs implementiert?}
+
+
 Die einzelnen Serviceangebote der Cloud-Provider bieten jeweils unterschiedliche Servicelevel, zum Teil auch variierend zwischen Standorten. Die wichtigsten Aspekte (von Schutzobjekten) welche in eine Complianceprüfung gehören sollen identifiziert werden.
 
 Wir wollen erforschen, wie ein Mapping zwischen den relevanten Eigenschaften von Services in der Cloud und den Aspekten von Schutzobjekten implementiert werden kann.
@@ -16,7 +20,7 @@ Wir wollen erforschen, wie ein Mapping zwischen den relevanten Eigenschaften von
 
 \subsubsection{Erforschung bestehende Produkte, Konzepte, Ansätze und Frameworks}
 
-\textit{Welche Produkte existieren bereits auf dem Markt zur cloud-übergreifenden Prüfung von Compliance?}
+\textit{Welche Konzepte und etwaige Produkte existieren bereits zur plattformübergreifenden Prüfung und Enforcement von Compliance?}
 
 Im Rahmen der Lösungsfindung soll von bereits bestehenden Produkten profitiert werden. Wir wollen herausfinden, welche Produkte bereits existieren und wie diese die Complianceprüfung durchführen.
 Nützliche Ansätze und Konzepte sollen hervorgehoben und für eine allfällige Eigenimplementation ggf. in Betracht gezogen werden. Hier wollen wir Produkte untersuchen welche die Complianceprüfung direkt/proprietär umsetzen, unabhängig von der dahinterliegenden Technologie.
@@ -29,64 +33,38 @@ Schutzobjekte (z.B. Applikationen) werden in der SGC cloud-nativ (via zugehörig
 
 \subsubsection{Konzeption eines Frameworks}
 
-\textit{Welche Aspekte muss ein Framework zur cloud-übergreifende compliance von Regeln berücksichtigen und wie ist hierbei eine agnostische Anwendung durch verschiedenen Interessengruppen möglich?}
+\textit{Wie muss ein Framework Compliance Regeln implementieren sodass eine Anwendung durch verschiedenen Interessengruppen möglich ist?}
 
 Um verschiedenen Regelwerke (Si001 etc.) einheitlich anzuwenden ist eine Art Sprache notwendig die es den verschiedenen Experten (sei es CISO, Projektverantwortlichen) erlaubt ihre Bedürfnisse auszuformulieren. Diese muss gleichzeitig durch ein System interpretiert werden können damit die entsprechenden Massnahmen ergriffen werden können.
 
-\subsection{Nicht funktionale Anforderungen}
-
-\textit{Auf welche Art und Weise soll der Output erbracht werden?}
-
-\begin{table}[H]
-    \centering
-    \begin{tabularx}{\textwidth}{|l|l|X|}
-        \hline
-        \textbf{\#} & \textbf{Kategorie} & \textbf{Zielbeschreibung} \\
-        \hline
-        1 & \vtop{\hbox{\strut Interne Nachforschung}\hbox{\strut (Optional)}} & Bestehenden Praktiken der verschiedenen internen Interessengruppen sind bekannt \\
-        \hline
-        2 & Marktforschung & Recherche von bestehenden Produkten, deren Funktionalität, Gemeinsamkeiten und Deckung von Anforderungen ist erfolgt \\
-        % TODO Anforderungen im sinne von wie die bestehenden policies ausgelegt / interpretiert werden \newline
-        % TODO Produkte bspw CSPM, CIEM, CWPP
-        \hline
-        3 & Konzeptionierung & Konzept für ein Framework ist erstellt \\
-        % TODO Erste Idee DSL, Labeling, offen fürs effektive enforcement, einbeziehen verschiedene SecOffs
-        \hline
-    \end{tabularx}
-    \caption{Nicht funktionale Anforderungen}
-    \label{tab:nonfunctional-requirements}
-\end{table}
-
-\subsection{Funktionale Anforderungen}
-
-\textit{Welchen Output soll das Projekt erbringen?}
+\subsection{Ziele}
+Die folgenden Ziele gelten für die gesamte Arbeit und orientieren sich an den Forschungsfragen. Aktuell wird davon ausgegnagen dass die Erkenntinsse in einem Artefakt resultieren welches die genantne Ziele implementiert. Dieses Artefakt wird nachfolgend als Framework bezeichnet welches jedoch die Art umd des Artefakts nicht einschränken soll.
 
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|l|l|X|}
+    \begin{tabularx}{\textwidth}{|l|X|}
         \hline
-        \textbf{\#} & \textbf{Kategorie} & \textbf{Zielbeschreibung} \\
+        \textbf{\#} & \textbf{Ziel} \\
         \hline
-        1 & Implementation & Das Framework deckt einen Servicetyp (z.B. k8s) einer Public-Cloud Plattform ab
-        \\
+        1 & Ein Konzept für die technische Umsetzung einer plattformübergreifenden (mindestens zwei Public on eine Private Cloud) Cloud-Governance im Rahmen des SGC-Vorhabens bis zum 14.08.2025 umgesetzt \\
         \hline
-        2 & Implementation & Das Framework deckt einen Servicetyp einer Public-Cloud und einer private Cloud Plattform des BIT ab
-        \\
-        \hline
-        3 & \vtop{\hbox{\strut Agnostik}\hbox{\strut (Optional)}} & Das Framework deckt mindestens zwei Public-Cloud Plattformen und eine private Cloud Plattform ab
-        % TODO Erste Idee DSL, Labeling, offen fürs effektive enforcement, einbeziehen verschiedene SecOffs
-        \\
-        \hline
-        4 & \vtop{\hbox{\strut Implementation}\hbox{\strut (Optional)}}  & Framework kann reaktiv eingesetzt werden zur Überprüfung der Compliance
-        \\
-        \hline
-        5 & \vtop{\hbox{\strut Implementation}\hbox{\strut (Optional)}} & Framework kann präemptiv eingesetzt werden zur Enforcierung der Compliance
-        \\
+        2 & Ein Framework welches mindestens die Ist-Situation einer multi plattformübergreifende Cloud-Umgebung gegenüber Governancen Vorgaben analysiert ist bis zum 14.08.2025 umgesetzt  \\
         \hline
     \end{tabularx}
-    \caption{Funktionale Anforderungen}
-    \label{tab:functional-requirements}
+    \caption{Ziele}
+    \label{tab:goals}
 \end{table}
+
+\subsubsection{Abgrenzung}
+
+Bei der Thematik die behandelt werden soll handelt es sich um ein weites Feld, weshalb die Zielerreichung wie folgt eingeschränkt wird:
+
+\begin{itemize}
+    \item Das Framework deckt einen Servicetyp (z.B. k8s) einer Public-Cloud Plattform ab
+    \item Das Framework deckt einen Servicetyp einer Public-Cloud und einer private Cloud Plattform des BIT ab
+    \item Das Framework deckt mindestens zwei Public-Cloud Plattformen und eine private Cloud Plattform ab
+    \item Das Framework kann mindestens reaktiv zur Prüfung der Compliance eingesetzt werden
+\end{itemize}
 
 \subsection{Meilensteine}
 
@@ -101,7 +79,13 @@ Die folgenden Meilensteine sind ebenfalls im
         1 & 09.03.2025 & Projektvereinbarung signiert
         \\
         \hline
-        2 & xx.xx.xx & Recherche Produkte und bestehende Praktiken abgeschlossen
+        2 & xx.xx.xx & Bestehenden Praktiken der verschiedenen internen Interessen-
+        gruppen sind bekannt
+        % TODO Anforderungen im sinne von wie die bestehenden policies ausgelegt / interpretiert werden \newline
+        % TODO Produkte bspw CSPM, CIEM, CWPP
+        \\
+        \hline
+        2 & xx.xx.xx & Recherche von bestehenden Produkten, deren Funktionalität, Gemeinsamkeiten und Deckung von Anforderungen ist erfolgt
         % TODO Anforderungen im sinne von wie die bestehenden policies ausgelegt / interpretiert werden \newline
         % TODO Produkte bspw CSPM, CIEM, CWPP
         \\

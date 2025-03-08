@@ -1,0 +1,56 @@
+\glsdefs@newdocentry{CSB}%
+{%
+name={\acronymfont {\glsentryshort {CSB}}},%
+sort={CSB},%
+type={acronym},%
+first={CSB},%
+firstplural={CSBs},%
+text={CSB},%
+plural={CSBs},%
+description={Cloud Service Broker},%
+descriptionplural={Cloud Service Broker},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cloud Service Broker},%
+longplural={Cloud Service Brokers},%
+short={CSB},%
+shortplural={CSBs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CAPS}%
+{%
+name={\acronymfont {\glsentryshort {CAPS}}},%
+sort={CAPS},%
+type={acronym},%
+first={CAPS},%
+firstplural={CAPSs},%
+text={CAPS},%
+plural={CAPSs},%
+description={Cloud Application Plattform Services},%
+descriptionplural={Cloud Application Plattform Services},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cloud Application Plattform Services},%
+longplural={Cloud Application Plattform Servicess},%
+short={CAPS},%
+shortplural={CAPSs},%
+counter={page},%
+parent={},%
+%
+}%
+
