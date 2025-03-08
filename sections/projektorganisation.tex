@@ -1,0 +1,96 @@
+\section{Projektorganisation}
+
+Das ip5 Projekt läuft ab der Freigabe der Projektvereinbarung bis zum 14.08.2025. Die erbrachte Leistung sollte den erwarteten 180h pro Teammitglied entsprechen.
+Wir orientieren uns hierzu an der agilen Methodik Kanban. Hierunter verstehen wir konkret, dass:
+\begin{itemize}
+    \item Die verschiedenen Tasks werden für jeden Projektbeteiligten sichtbar geführt (TODO hier link GithubBoard)
+    \item Das Team inklusive dem PO synchen sich mindestens alle zwei Wochen um den aktuellen Stand zu tracken
+    \item Die Arbeit erfolgt nicht in sprints sondern allg nach Priorität welche aus den jeweiligen Syncs hervorgeht
+    \item Den Stakeholde wird alle 4 Wochen der aktuelle Stand präsentiert, bei welchem sie Ihren Input eingeben können
+\end{itemize}
+
+\subsection{Austausch}
+Der Austausch inklusive den Synch wird zwischen den beteiligten erfolgt bevorzugt über den vorgesehen \href{https://teams.microsoft.com/l/channel/19%3A3bd20805200e482b809e5bf7b9294922%40thread.tacv2/25FS%20SGCWorkloadClassification?groupId=5c45c1ea-5d01-4a7b-8989-82ab37a27223&tenantId=9d1a5fc8-321e-4101-ae63-530730711ac2&ngc=true}{Teams-Kanal}, damit alle Interessierten auch passiv teilnehmen können.
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{Objekt} & \textbf{Ort} \\
+        \hline
+        Projektarbeit & Die Projekt arbeit wird auf \href{https://gitlab.fhnw.ch/cloudgovernance/ip5-paper}{im ip5-paper repo} als LaTex Dokument abgelelgt \\
+        \hline
+        % TODO korrekten Link abglegen
+        Code-Basis & Die verschiedenen Code-Bases werden unter ein separaten \href{TODO-link}{Github Organization} im Sinne des EMBAG öffentlich abgelegt  \\
+        \hline
+    \end{tabularx}
+    \caption{Verwendete Plattformen}
+    \label{tab:used-plattforms}
+\end{table}
+
+
+\begin{landscape}
+\subsection{Zeitplan}
+Das folgende Gantt-Diaramm stellt die Arbeit mit den Meilensteinen und groben Tasks da. Zu erwähnen ist hierbei, dass die detaillierten Tasks mittels Kanban-Board getracked werden.
+
+
+\newcounter{myWeekNum}
+\stepcounter{myWeekNum}
+%
+\newcommand{\myWeek}{\themyWeekNum
+    \stepcounter{myWeekNum}
+    \ifnum\themyWeekNum=53
+         \setcounter{myWeekNum}{1}
+    \else\fi
+}
+%
+%%% Begin document
+\setcounter{myWeekNum}{8}
+\ganttset{%
+calendar week text={\myWeek{}}%
+}
+%
+\begin{figure}[h!bt]
+\begin{center}
+\begin{ganttchart}[
+vgrid={*{6}{draw=none}, dotted},
+x unit=.1cm,
+y unit title=.6cm,
+y unit chart=.6cm,
+time slot format=isodate,
+time slot format/start date=2025-02-17]{2025-02-17}{2025-08-18}
+    \ganttset{bar height=.6}
+    \gantttitlecalendar{year, month=name, week} \\
+    
+    % Kickoff
+    \ganttgroup{Kickoff}{2025-02-17}{2025-03-07} \\
+        \ganttbar{Austausch Kunde}{2025-02-17}{2025-02-28} \\
+        \ganttmilestone[milestone/.append style={fill=red}]{Proj Vereinbarung signiert}{2025-02-28} \\
+
+    % Analyse
+    \ganttgroup{Analyse}{2025-03-03}{2025-03-14} \\
+        \ganttbar{Interessengruppen}{2025-03-03}{2025-03-14} \\
+        \ganttbar{Literatur und Recherche}{2025-03-03}{2025-03-14} \\
+        \ganttmilestone[milestone/.append style={fill=red}]{Analyse dokumentiert}{2025-03-14} \\
+    
+    
+    % Konzeptionierung / Implementierung
+    \ganttgroup{Konzeptionierung}{2025-03-17}{2025-04-18} \\
+        \ganttbar{Definieren DSL}{2025-03-17}{2025-04-04} \\
+        \ganttbar{Erprobung DSL}{2025-04-07}{2025-04-11} \\
+        \ganttmilestone[milestone/.append style={fill=red}]{First draft DSL}{2025-04-18} \\
+    
+    
+    % CODE FREEZE
+    \ganttmilestone[milestone/.append style={fill=red}]{Code freeze}{2025-07-14} \\
+
+
+    \ganttgroup{Dokumentieren}{2025-07-14}{2025-08-18} \\
+
+
+    \ganttbar[bar/.append style={fill=brown}]{Projektwoche}{2025-05-05}{2025-05-10} \\
+    \end{ganttchart}
+    \end{center}
+    \caption{Time Plan}
+\end{figure}
+\end{landscape}

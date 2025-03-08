@@ -1,0 +1,97 @@
+\documentclass[final]{fhnwreport}         %[mode] = draft or final
+\input{fhnwheader}                        %loads all packages, definitions and settings	
+
+%%%%% Logo: Hocvhschule HTU oder HSI, Sprache DE oder EN:
+%\newcommand{\logofilename}{FHNW_HTU_DE}
+%\newcommand{\logofilename}{FHNW_HTU_EN}
+\newcommand{\logofilename}{FHNW_HSI_DE}
+%\newcommand{\logofilename}{FHNW_HSI_EN}
+%%%%%
+%%%%% Bibliographie entweder im IEEE- oder im APA-Stil:
+%\usepackage[style=ieee,urldate=comp,backend=biber]{biblatex}
+\usepackage[style=apa,urldate=comp,backend=biber]{biblatex}
+%%%%%
+\addbibresource{literature/bib.bib}
+											
+\title{Cloud Governance in einer multi-provider Cloud}  %Project Title
+\author{Projektvereinbarung IP5}    %Document Type => Technical Report, ...
+\date{Windisch, März 2025}               %Place and Date
+
+\begin{document}
+
+\pagenumbering{roman}	
+
+%%---TITLEPAGE---------------------------------------------------------------------------
+\selectlanguage{ngerman}                  %ngerman or english
+\maketitle
+
+\vfill
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{BIT_SGC_Overview.jpg}
+\end{figure}
+
+\vfill
+
+\begin{tabular}{@{}p{5cm} l}
+  Studentin/Student          &    Frithjof Hoppe\\
+  &    Benjamin Dätwyler\\[2ex]
+Expertin/Experte           &    Sebastian Matyas\\[2ex]
+Fachbetreuer/in            &    Sebastian Graf\\[2ex]
+Auftraggeberin             &    Thierry Perroud\\[2ex]
+Projektnummer              &    25FS\_IMVS29\\[4ex]
+\multicolumn{2}{@{}l}{Fachhochschule Nordwestschweiz, Hochschule für Informatik}
+\end{tabular}
+
+\vspace*{4ex}
+% Logo Industriepartner
+\begin{tikzpicture}[remember picture,overlay,every node/.style={anchor=north east}]
+  \node at (current page.north east) [xshift=-1cm, yshift=-1cm] {\includegraphics[width=8cm]{BIT_d_rgb_pos_quer_pf.jpg}};
+\end{tikzpicture}
+
+\clearpage
+			
+%%---ABSTRACT----------------------------------------------------------------------------
+\selectlanguage{ngerman}				%ngerman or english
+\thispagestyle{empty}
+
+%%---TABLE OF CONTENTS-------------------------------------------------------------------	
+\selectlanguage{ngerman}				%ngerman or english
+\tableofcontents
+\clearpage
+
+% \listoffigures
+% \listoftables
+% \cleardoublepage
+
+%%---TEXT--------------------------------------------------------------------------------
+\pagenumbering{arabic}
+\input{sections/ausgangslage}
+\input{sections/problemstellung}
+\include{sections/zielsetzung}
+\input{sections/technologien}
+\input{sections/projektorganisation}
+
+%%---BIBLIOGRAPHY------------------------------------------------------------------------
+% {\sloppypar
+% \printbibliography[heading=bibintoc, title=Quellenverzeichnis]
+% }
+
+\newacronym{CSB}{CSB}{Cloud Service Broker}
+\newacronym{CAPS}{CAPS}{Cloud Application Plattform Services}
+
+%%---APPENDIX----------------------------------------------------------------------------
+% \include{sections/eigenstaendigkeit}
+% \selectlanguage{english}				%ngerman or english
+% \include{sections/authenticity}
+% \selectlanguage{ngerman}				%ngerman or english
+\printglossary[type=acronym, title=Abkürzungsverzeichnis]  %
+\include{sections/appendix}
+
+%%---NOTES for DEBUG---------------------------------------------------------------------
+%\newpage
+%\listoftodos[\section{Todo-Notes}]
+%\clearpage
+
+\end{document}
